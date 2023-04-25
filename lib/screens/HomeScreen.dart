@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:khmerdict/model/DictData.dart';
+import 'package:khmerdict/screens/components/InputSearch.dart';
+import 'package:khmerdict/screens/components/ListData.dart';
 import 'package:khmerdict/utils/BacgroundPaint.dart';
 
 class HomeApp extends StatefulWidget {
@@ -16,7 +18,6 @@ class _HomeAppState extends State<HomeApp> {
   List<dynamic> _jsonData = [];
   final _controller = TextEditingController();
   List<DictData> _results = [];
-  String? searchWord = "";
 
   @override
   void initState() {
@@ -24,6 +25,7 @@ class _HomeAppState extends State<HomeApp> {
     _loadJsonData();
   }
 
+  //load data from file json local
   Future<void> _loadJsonData() async {
     final jsonString = await rootBundle.loadString('assets/json/db.json');
     setState(() {
@@ -32,6 +34,7 @@ class _HomeAppState extends State<HomeApp> {
     });
   }
 
+  //function when text changed and check search text empty
   void _onTextChanged(String value) {
     setState(() {
       if (value.isNotEmpty) {
@@ -42,6 +45,7 @@ class _HomeAppState extends State<HomeApp> {
     });
   }
 
+  //query text for result
   List<DictData> _search(String query) {
     final results = <DictData>[];
     for (final item in _jsonData) {
@@ -66,6 +70,7 @@ class _HomeAppState extends State<HomeApp> {
         painter: BacgroundPaint(),
         child: Column(
           children: <Widget>[
+            //Header
             Center(
               child: Container(
                 padding: const EdgeInsets.all(10.0),
@@ -80,55 +85,15 @@ class _HomeAppState extends State<HomeApp> {
                 ),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15.0, bottom: 25.0),
-              child: TextField(
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'Kantumruy',
-                    fontSize: 22.0),
-                textAlign: TextAlign.center,
-                cursorColor: Colors.white,
-                decoration: const InputDecoration(
-                  filled: true,
-                  fillColor: Color(0xFF1AFFFFFF),
-                  hintText: "ស្វែងរកពាក្យ",
-                  hintStyle: TextStyle(
-                      color: Color(0xFF86899B),
-                      fontFamily: 'Kantumruy',
-                      fontSize: 22.0),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 2, color: Colors.white),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 2, color: Colors.white),
-                  ),
-                ),
-                controller: _controller,
-                onChanged: (value) {
-                  _onTextChanged(value);
-                },
-              ),
+            //Textfield for search word
+            InputSearch(
+              controller: _controller,
+              ontextChange: (value) {
+                _onTextChanged(value);
+              },
             ),
-            Expanded(
-              child: ListView.builder(
-                itemBuilder: ((context, index) {
-                  return ListTile(
-                    title: Text(
-                      _results[index].definition.toString(),
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'Kantumruy',
-                        fontSize: 16,
-                      ),
-                    ),
-                  );
-                }),
-                itemCount: _results.length,
-                physics: const BouncingScrollPhysics(),
-              ),
-            ),
+            //List data for result
+            ListData(results: _results),
           ],
         ),
       ),
