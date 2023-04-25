@@ -9,7 +9,7 @@ class InputSearch extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(
-          left: 15.0, right: 15.0, top: 15.0, bottom: 25.0),
+          left: 15.0, right: 15.0, top: 15.0, bottom: 15.0),
       child: TextField(
         style: const TextStyle(
             color: Colors.white, fontFamily: 'Kantumruy', fontSize: 22.0),
