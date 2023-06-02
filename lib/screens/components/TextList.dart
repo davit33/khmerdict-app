@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:khmerdict/screens/components/constant.dart';
 
 class TextList extends StatelessWidget {
   const TextList({super.key, this.text, this.colour, this.fontSize});
@@ -12,7 +13,7 @@ class TextList extends StatelessWidget {
       text!,
       style: TextStyle(
         color: colour,
-        fontFamily: 'Kantumruy',
+        fontFamily: appFont,
         fontSize: fontSize,
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:khmerdict/model/DictData.dart';
 import 'package:khmerdict/screens/components/TextList.dart';
+import 'package:khmerdict/screens/components/constant.dart';
 
 class ListData extends StatelessWidget {
   const ListData({super.key, this.results});
@@ -64,7 +65,7 @@ class ListData extends StatelessWidget {
                         const TextList(
                           colour: Color(0xFFBBBDC7),
                           fontSize: 14,
-                          text: "អានថា៖",
+                          text: read,
                         ),
                         Container(
                           padding: const EdgeInsets.only(left: 5.0),
