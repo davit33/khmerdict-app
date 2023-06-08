@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:khmerdict/screens/components/constant.dart';
 
 class InputSearch extends StatelessWidget {
   const InputSearch({super.key, this.controller, this.ontextChange});
