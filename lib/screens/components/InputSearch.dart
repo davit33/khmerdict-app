@@ -12,16 +12,16 @@ class InputSearch extends StatelessWidget {
           left: 15.0, right: 15.0, top: 15.0, bottom: 15.0),
       child: TextField(
         style: const TextStyle(
-            color: Colors.white, fontFamily: 'Kantumruy', fontSize: 22.0),
+            color: Colors.white, fontFamily: appFont, fontSize: 22.0),
         textAlign: TextAlign.center,
         cursorColor: Colors.white,
         decoration: const InputDecoration(
           filled: true,
           fillColor: Color(0xFF1AFFFFFF),
-          hintText: "ស្វែងរកពាក្យ",
+          hintText: searchWord,
           hintStyle: TextStyle(
               color: Color(0xFF86899B),
-              fontFamily: 'Kantumruy',
+              fontFamily: appFont,
               fontSize: 22.0),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(width: 2, color: Colors.white),

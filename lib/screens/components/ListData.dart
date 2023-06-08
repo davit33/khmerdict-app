@@ -16,7 +16,7 @@ class ListData extends StatelessWidget {
             padding:
                 const EdgeInsets.only(left: 11.0, right: 11.0, bottom: 11.0),
             child: Card(
-              color: const Color(0xFF38FFFFFF),
+              color: const Color(0xff38ffffff),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -33,7 +33,7 @@ class ListData extends StatelessWidget {
                           visible: results![index].part_of_speech!.isNotEmpty,
                           child: Card(
                             elevation: 0.0,
-                            color: const Color(0xFF4DFFFFFF),
+                            color: const Color(0xff4dffffff),
                             child: Container(
                               padding: const EdgeInsets.only(
                                   left: 5.0, right: 5.0, top: 3.0, bottom: 3.0),

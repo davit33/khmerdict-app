@@ -6,7 +6,6 @@ import 'package:khmerdict/model/DictData.dart';
 import 'package:khmerdict/screens/components/DialogAbout.dart';
 import 'package:khmerdict/screens/components/InputSearch.dart';
 import 'package:khmerdict/screens/components/ListData.dart';
-import 'package:khmerdict/screens/components/TextList.dart';
 import 'package:khmerdict/screens/components/constant.dart';
 import 'package:khmerdict/utils/BacgroundPaint.dart';
 import 'package:shared_preferences/shared_preferences.dart';

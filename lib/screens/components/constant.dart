@@ -11,3 +11,4 @@ const String directoryFile = "assets/json/db.json";
 const String titleApp = "វចនានុក្រមខ្មែរ";
 const String appFont = "Kantumruy";
 const String read = "អានថា៖";
+const String searchWord = "ស្វែងរកពាក្យ";

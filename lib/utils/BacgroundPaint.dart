@@ -10,7 +10,7 @@ class BacgroundPaint extends CustomPainter {
 
     Path mainBackground = Path();
     mainBackground.addRect(Rect.fromLTRB(0, 0, width, height));
-    paint.color = const Color(0xFF4D5D6179);
+    paint.color = const Color(0xff4d5d6179);
 
     final heightLine = height ~/ 40; // Horizontal line
     final widthLine = (width ~/ 20); // Vertical line

@@ -8,7 +8,7 @@ class DialogAbout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: const Color(0xFF38FFFFFF),
+      backgroundColor: const Color(0xff38ffffff),
       title: const Center(
         child: TextList(
           text: wellcome,
@@ -16,11 +16,11 @@ class DialogAbout extends StatelessWidget {
           fontSize: 22.0,
         ),
       ),
-      content: Column(
+      content: const Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
-        children: const <Widget>[
+        children: <Widget>[
           TextList(
             text: about,
             colour: Colors.white,
